@@ -11,6 +11,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import dabells.blocks.BlockBellEmerald;
 import dabells.blocks.BlockBellGold;
 import dabells.blocks.BlockBellSilver;
 
@@ -20,6 +21,7 @@ public class DaBells
 {
 	public static final Block BellGold = new BlockBellGold().setBlockName("BellGold");
 	public static final Block BellSilver = new BlockBellSilver().setBlockName("BellSilver");
+	public static final Block BellEmerald = new BlockBellEmerald().setBlockName("BellEmerald");
 	
 	@Instance(Infofile.NAME)
 	public static DaBells instance;
@@ -49,16 +51,22 @@ public class DaBells
 		
 		GameRegistry.registerBlock(BellGold, "BellGold");
 		GameRegistry.registerBlock(BellSilver, "BellSilver");
+		GameRegistry.registerBlock(BellEmerald, "BellEmerald");
 				
 		ItemStack nuggold46 = new ItemStack(Items.gold_nugget, 46);
 		ItemStack ingiron6 = new ItemStack(Items.iron_ingot, 6);
+		ItemStack emerald6 = new ItemStack(Items.emerald, 6);
+		
 		GameRegistry.addRecipe(new ItemStack(BellGold, 1), new Object[]
 				{"TYT", "YXY", "YZY", 'T', Items.stick, 'Y', Items.gold_ingot, 'X', Items.string, 'Z', Items.gold_nugget});
 		GameRegistry.addRecipe(new ItemStack(BellSilver, 1), new Object[]
 				{"TYT", "YXY", "YYY", 'T', Items.stick, 'Y', Items.iron_ingot, 'X', Items.string});
+		GameRegistry.addRecipe(new ItemStack(BellEmerald, 1), new Object[]
+				{"TYT", "YXY", "YYY", 'T', Items.stick, 'Y', Items.emerald, 'X', Items.string});
 		
 		GameRegistry.addSmelting(BellGold, nuggold46, 0.0F);
 		GameRegistry.addSmelting(BellSilver, ingiron6, 0.0F);
+		GameRegistry.addSmelting(BellEmerald, emerald6, 0.0F);
 	}
 	
 	@EventHandler
