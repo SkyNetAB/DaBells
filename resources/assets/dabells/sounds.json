@@ -1,3 +1,4 @@
 {
-   "bellsmack": {"category": "block","sounds": [{"name": "bellsmack","stream": false}]}
+   "bellsmack": {"category": "block","sounds": [{"name": "bellsmack","stream": false}]},
+   "starbellsmack": {"category": "block","sounds": [{"name": "starbellsmack","stream": false}]}
 }
