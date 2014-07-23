@@ -5,7 +5,7 @@ public class Infofile
 {
 	public static final String ID = "dabells";
 	public static final String NAME = "DaBells";
-	public static final String VERS = "3.0";
+	public static final String VERS = "3.1";
 	public static final String CLIENTPROXY = "dabells.client.";
 	public static final String COMMONPROXY = "dabells.";
 	

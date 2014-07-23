@@ -6,6 +6,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -74,6 +75,7 @@ public class DaBells
 		public static final Block MasterBellEmerald = new BlockMasterBell("MasterBellEmerald");
 	//Tier IV (Ultimate) Bell Blocks
 		public static final Block BellNetherStar = new BlockBellNetherStar("BellNetherStar");
+	//Other
 
 //Items
 	//Bell Plating
@@ -85,7 +87,7 @@ public class DaBells
 		public static final Item PlatingDiamond = new ItemPlating("PlatingDiamond");
 		public static final Item PlatingEnder = new ItemPlating("PlatingEnder");
 		public static final Item PlatingEmerald = new ItemPlating("PlatingEmerald");
-	//Dust
+	//Dust & More
 		public static final Item PasteLuminous = new ItemPasteLuminous("PasteLuminous");
 
 
@@ -152,6 +154,7 @@ public class DaBells
       	GameRegistry.registerBlock(MasterBellEmerald, "MasterBellEmerald");
 //Tier IV (Ultimate) Bell Blocks
      	GameRegistry.registerBlock(BellNetherStar, "BellNetherStar");
+//Blocks
       	
 //Items
       	GameRegistry.registerItem(PlatingIron, "PlatingIron");
@@ -171,7 +174,7 @@ public class DaBells
       	ItemStack Lapis = new ItemStack(Items.dye, 1, 4);
      	ItemStack Fish = new ItemStack(Items.fish, 1, 3);
      //Tier 0 (Decorative) Bell Blocks
-		GameRegistry.addRecipe(new ItemStack(BellSilver, 1), new Object[]
+     	GameRegistry.addRecipe(new ItemStack(BellSilver, 1), new Object[]
 				{"TYT", "YXY", "YYY", 'T', Items.stick, 'Y', Items.iron_ingot, 'X', Items.string});
 		GameRegistry.addRecipe(new ItemStack(BellQuartz, 1), new Object[]
 				{"TYT", "YXY", "YYY", 'T', Items.stick, 'Y', Items.quartz, 'X', Items.string});
@@ -296,5 +299,8 @@ public class DaBells
 	{proxy.registerRenderers();}
 	
 	@EventHandler
-	public void postInit(FMLPostInitializationEvent fmlpostinitializationevent) {}
+	public void postInit(FMLPostInitializationEvent event) 
+	{
+		FMLCommonHandler.instance().bus().register(new UpdateCheck());
+	}
 }
