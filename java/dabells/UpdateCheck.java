@@ -61,10 +61,12 @@ public class UpdateCheck
 	public boolean Notify(EntityPlayer player, String lateVers)
 	{
 		String msg = "DaBells has been updated to v" + lateVers + " :: You are running v" + curVers;
+		String msg2 = "Download from - http://go.atomicbase.com/7257560/dabells-download";
 		if (notifiedCount == 0)
 		{
 			System.out.println("Trying to notify you via Chat");
 			player.addChatMessage(new ChatComponentText(msg));
+			player.addChatMessage(new ChatComponentText(msg2));
 			notifiedCount++;
 			return isNotified;
 		}
