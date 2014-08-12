@@ -23,7 +23,7 @@ public class onLogOn
 				URL versionIn = new URL("https://raw.githubusercontent.com/SkyNetAB/DaBells/master/vers");
 				BufferedReader in = new BufferedReader(new InputStreamReader(versionIn.openStream()));
 				newVers = in.readLine();
-								
+				
 				if (!newVers.equals(curVers))
 				{
 					EntityPlayer player = login.player;

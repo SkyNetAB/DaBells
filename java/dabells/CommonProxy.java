@@ -58,7 +58,7 @@ public class CommonProxy
         catch (Exception e) 
         {
         	System.out.println("Unable to load configuration for DaBells");
-            lateVers = curVers;
+        	lateVers = curVers;
         } 
         finally 
         {

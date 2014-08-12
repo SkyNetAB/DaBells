@@ -10,7 +10,7 @@ public class Infofile
 	public static final String COMMONPROXY = "dabells.";
 	
 	public static final String DESCRIP = "DaBells!! DaBells!! We've added bells to Minecraft. And yes, they ring. Hope you enjoy them!!";
-	public static final String MCVERS = "1.7.2";
+	public static final String MCVERS = "1.7.10";
 	public static final String URL = "http://skynet.atomicbase.com/";
 	public static final String UDURL = "";
 	public static final String AUTH = "SkyNetAB Team";
