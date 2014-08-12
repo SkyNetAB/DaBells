@@ -29,7 +29,7 @@ public class CommonProxy
             Property checkerCount = cfg.get(Configuration.CATEGORY_GENERAL, "versChecker", notified);
             checkerCount.comment = "Notify player of new versions when joining world?\n(Note: Console will still have notifications.)\n1 - YES, Gimme the updates!!\n0 - NAH, Keep your stinking updates to yourself!!";
             
-            URL versionIn = new URL("https://raw.githubusercontent.com/SkyNetAB/DaBells/master/vers");
+            URL versionIn = new URL("https://raw.githubusercontent.com/SkyNetAB/DaBells/1.7.2/vers");
     		BufferedReader in = new BufferedReader(new InputStreamReader(versionIn.openStream()));
     		String newVers = in.readLine();
     		
