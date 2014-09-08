@@ -18,7 +18,6 @@ public class CommonProxy
 	public static String lateVers;
 		
 	public static int notified = 1;
-	public static int resolution = 0;
 				
 	public void config(FMLPreInitializationEvent event) 
 	{
@@ -30,7 +29,7 @@ public class CommonProxy
             Property checkerCount = cfg.get(Configuration.CATEGORY_GENERAL, "versChecker", notified);
             checkerCount.comment = "Notify player of new versions when joining world?\n(Note: Console will still have notifications.)\n1 - YES, Gimme the updates!!\n0 - NAH, Keep your stinking updates to yourself!!";
             
-            URL versionIn = new URL(Infofile.VERurl);
+            URL versionIn = new URL("https://raw.githubusercontent.com/SkyNetAB/DaBells/1.7.2/vers");
     		BufferedReader in = new BufferedReader(new InputStreamReader(versionIn.openStream()));
     		String newVers = in.readLine();
     		
@@ -55,20 +54,6 @@ public class CommonProxy
     		{
     			lateVers = newVers;
     		}
-    		
-            Property icoRes = cfg.get(Configuration.CATEGORY_GENERAL, "iconRes", resolution);
-            icoRes.comment = "0 - Techne Bells (Default)\n1 - 64x64\n2 - 128x128\n3 - 256x256";
-            
-            if (icoRes.getInt() == 0)
-            {resolution = 0;}
-            else if (icoRes.getInt() == 1)
-            {resolution = 64;}	
-            else if (icoRes.getInt() == 2)
-            {resolution = 128;}	
-            else if (icoRes.getInt() == 3)
-            {resolution = 256;}
-            else {resolution = 0;}
-
         }
         catch (Exception e) 
         {

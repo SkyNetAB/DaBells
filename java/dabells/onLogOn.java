@@ -20,7 +20,7 @@ public class onLogOn
 		{
 			try
 			{
-				URL versionIn = new URL(Infofile.VERurl);
+				URL versionIn = new URL("https://raw.githubusercontent.com/SkyNetAB/DaBells/1.7.2/vers");
 				BufferedReader in = new BufferedReader(new InputStreamReader(versionIn.openStream()));
 				newVers = in.readLine();
 								
