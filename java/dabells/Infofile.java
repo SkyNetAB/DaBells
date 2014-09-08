@@ -5,7 +5,8 @@ public class Infofile
 {
 	public static final String ID = "dabells";
 	public static final String NAME = "DaBells";
-	public static final String VERS = "3.3";
+	public static final String VERS = "3.4";
+	public static final String VERurl = "https://raw.githubusercontent.com/SkyNetAB/DaBells/1.7.2/vers";
 	public static final String CLIENTPROXY = "dabells.client.";
 	public static final String COMMONPROXY = "dabells.";
 	

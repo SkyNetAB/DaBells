@@ -2,6 +2,7 @@ package dabells.items;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import dabells.CommonProxy;
 import dabells.DaBells;
 import dabells.Infofile;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -21,6 +22,6 @@ public class ItemPlating extends Item
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister icon)
-	{this.itemIcon = icon.registerIcon(Infofile.NAME + ":" + name);}
+	{this.itemIcon = icon.registerIcon(Infofile.NAME + ":" + CommonProxy.resolution + "/" + name);}
 	
 }

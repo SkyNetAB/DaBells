@@ -32,7 +32,7 @@ public class DaBells
 	{
 		public Item getTabIconItem()
 		{
-			return Item.getItemFromBlock(BellSilver);
+			return Item.getItemFromBlock(BellNetherStar);
 		}
 	};
 		
