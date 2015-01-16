@@ -14,19 +14,44 @@ import dabells.Infofile;
 @SideOnly(Side.CLIENT)
 public class RenderBell extends TileEntitySpecialRenderer
 {
-	public RenderBell(String blkname) 
+	public RenderBell(String blkname, String metadata) 
 	{
 		this.model = new BellModel();
 		this.name = blkname;
+		this.metaString = metadata;
 		textured();
 	}
-	
+
 	public String name;
 	private BellModel model;
+	public String metaString;
+	public String meta;
 	private ResourceLocation texture;
 	
 	private void textured()
-	{texture = new ResourceLocation(Infofile.NAME + ":" + "textures/tileentities/" + CommonProxy.resolution + "/" + name + ".png");}
+	{
+		if (name == "BellNetherStar0" || name == "BellNetherStar1" ||
+			name == "BellNetherStar2" || name == "BellNetherStar3" ||
+			name == "BellNetherStar4" || name == "BellNetherStar5" ||
+			name == "BellNetherStar6" || name == "BellNetherStar7")
+		{
+			if (metaString == "0") meta = "Silver";
+			else if (metaString == "1") meta = "Quartz";
+			else if (metaString == "2") meta = "RedStone";
+			else if (metaString == "3") meta = "Lazurite";
+			else if (metaString == "4") meta = "Gold";
+			else if (metaString == "5") meta = "Diamond";
+			else if (metaString == "6") meta = "Ender";
+			else if (metaString == "7") meta = "Emerald";
+			else meta = "Silver";
+			
+			String nameNS = "BellNetherStar";
+			texture = new ResourceLocation(Infofile.NAME + ":" + "textures/tileentities/" + CommonProxy.resolution + "/" + nameNS + meta + ".png");
+		}
+		else
+			texture = new ResourceLocation(Infofile.NAME + ":" + "textures/tileentities/" + CommonProxy.resolution + "/" + name + ".png");
+		
+	}
 	
 	@Override
 	public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float f)
