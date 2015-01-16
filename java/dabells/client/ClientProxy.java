@@ -9,7 +9,15 @@ import dabells.tileentities.TEBellEmerald;
 import dabells.tileentities.TEBellEnder;
 import dabells.tileentities.TEBellGold;
 import dabells.tileentities.TEBellLazurite;
-import dabells.tileentities.TEBellNetherStar;
+import dabells.tileentities.TEBellNetherStar0;
+import dabells.tileentities.TEBellNetherStar1;
+import dabells.tileentities.TEBellNetherStar2;
+import dabells.tileentities.TEBellNetherStar3;
+import dabells.tileentities.TEBellNetherStar4;
+import dabells.tileentities.TEBellNetherStar5;
+import dabells.tileentities.TEBellNetherStar6;
+import dabells.tileentities.TEBellNetherStar7;
+//import dabells.tileentities.TEBellNetherStar;
 import dabells.tileentities.TEBellQuartz;
 import dabells.tileentities.TEBellRedStone;
 import dabells.tileentities.TEBellSilver;
@@ -40,42 +48,43 @@ import dabells.tileentities.TEPBellSilver;
 
 public class ClientProxy extends CommonProxy
 {
+	final static String[] subBlocks = new String[]{"0","1","2","3","4","5","6","7"};
+	
 	@Override
 	public void registerRenderers()
 	{
-		TileEntitySpecialRenderer BellSilverRender = new RenderBell("BellSilver");
-		TileEntitySpecialRenderer BellQuartzRender = new RenderBell("BellQuartz");
-		TileEntitySpecialRenderer BellRedStoneRender = new RenderBell("BellRedStone");
-		TileEntitySpecialRenderer BellLazuriteRender = new RenderBell("BellLazurite");
-		TileEntitySpecialRenderer BellGoldRender = new RenderBell("BellGold");
-		TileEntitySpecialRenderer BellDiamondRender = new RenderBell("BellDiamond");
-		TileEntitySpecialRenderer BellEnderRender = new RenderBell("BellEnder");
-		TileEntitySpecialRenderer BellEmeraldRender = new RenderBell("BellEmerald");
-		TileEntitySpecialRenderer HardenedBellSilverRender = new RenderBell("HardenedBellSilver");
-		TileEntitySpecialRenderer HardenedBellQuartzRender = new RenderBell("HardenedBellQuartz");
-		TileEntitySpecialRenderer HardenedBellRedStoneRender = new RenderBell("HardenedBellRedStone");
-		TileEntitySpecialRenderer HardenedBellLazuriteRender = new RenderBell("HardenedBellLazurite");
-		TileEntitySpecialRenderer HardenedBellGoldRender = new RenderBell("HardenedBellGold");
-		TileEntitySpecialRenderer HardenedBellDiamondRender = new RenderBell("HardenedBellDiamond");
-		TileEntitySpecialRenderer HardenedBellEnderRender = new RenderBell("HardenedBellEnder");
-		TileEntitySpecialRenderer HardenedBellEmeraldRender = new RenderBell("HardenedBellEmerald");
-		TileEntitySpecialRenderer PlatedBellSilverRender = new RenderBell("PlatedBellSilver");
-		TileEntitySpecialRenderer PlatedBellQuartzRender = new RenderBell("PlatedBellQuartz");
-		TileEntitySpecialRenderer PlatedBellRedStoneRender = new RenderBell("PlatedBellRedStone");
-		TileEntitySpecialRenderer PlatedBellLazuriteRender = new RenderBell("PlatedBellLazurite");
-		TileEntitySpecialRenderer PlatedBellGoldRender = new RenderBell("PlatedBellGold");
-		TileEntitySpecialRenderer PlatedBellDiamondRender = new RenderBell("PlatedBellDiamond");
-		TileEntitySpecialRenderer PlatedBellEnderRender = new RenderBell("PlatedBellEnder");
-		TileEntitySpecialRenderer PlatedBellEmeraldRender = new RenderBell("PlatedBellEmerald");
-		TileEntitySpecialRenderer MasterBellSilverRender = new RenderBell("MasterBellSilver");
-		TileEntitySpecialRenderer MasterBellQuartzRender = new RenderBell("MasterBellQuartz");
-		TileEntitySpecialRenderer MasterBellRedStoneRender = new RenderBell("MasterBellRedStone");
-		TileEntitySpecialRenderer MasterBellLazuriteRender = new RenderBell("MasterBellLazurite");
-		TileEntitySpecialRenderer MasterBellGoldRender = new RenderBell("MasterBellGold");
-		TileEntitySpecialRenderer MasterBellDiamondRender = new RenderBell("MasterBellDiamond");
-		TileEntitySpecialRenderer MasterBellEnderRender = new RenderBell("MasterBellEnder");
-		TileEntitySpecialRenderer MasterBellEmeraldRender = new RenderBell("MasterBellEmerald");
-		TileEntitySpecialRenderer BellNetherStarRender = new RenderBell("BellNetherStar");
+		TileEntitySpecialRenderer BellSilverRender = new RenderBell("BellSilver", null);
+		TileEntitySpecialRenderer BellQuartzRender = new RenderBell("BellQuartz", null);
+		TileEntitySpecialRenderer BellRedStoneRender = new RenderBell("BellRedStone", null);
+		TileEntitySpecialRenderer BellLazuriteRender = new RenderBell("BellLazurite", null);
+		TileEntitySpecialRenderer BellGoldRender = new RenderBell("BellGold", null);
+		TileEntitySpecialRenderer BellDiamondRender = new RenderBell("BellDiamond", null);
+		TileEntitySpecialRenderer BellEnderRender = new RenderBell("BellEnder", null);
+		TileEntitySpecialRenderer BellEmeraldRender = new RenderBell("BellEmerald", null);
+		TileEntitySpecialRenderer HardenedBellSilverRender = new RenderBell("HardenedBellSilver", null);
+		TileEntitySpecialRenderer HardenedBellQuartzRender = new RenderBell("HardenedBellQuartz", null);
+		TileEntitySpecialRenderer HardenedBellRedStoneRender = new RenderBell("HardenedBellRedStone", null);
+		TileEntitySpecialRenderer HardenedBellLazuriteRender = new RenderBell("HardenedBellLazurite", null);
+		TileEntitySpecialRenderer HardenedBellGoldRender = new RenderBell("HardenedBellGold", null);
+		TileEntitySpecialRenderer HardenedBellDiamondRender = new RenderBell("HardenedBellDiamond", null);
+		TileEntitySpecialRenderer HardenedBellEnderRender = new RenderBell("HardenedBellEnder", null);
+		TileEntitySpecialRenderer HardenedBellEmeraldRender = new RenderBell("HardenedBellEmerald", null);
+		TileEntitySpecialRenderer PlatedBellSilverRender = new RenderBell("PlatedBellSilver", null);
+		TileEntitySpecialRenderer PlatedBellQuartzRender = new RenderBell("PlatedBellQuartz", null);
+		TileEntitySpecialRenderer PlatedBellRedStoneRender = new RenderBell("PlatedBellRedStone", null);
+		TileEntitySpecialRenderer PlatedBellLazuriteRender = new RenderBell("PlatedBellLazurite", null);
+		TileEntitySpecialRenderer PlatedBellGoldRender = new RenderBell("PlatedBellGold", null);
+		TileEntitySpecialRenderer PlatedBellDiamondRender = new RenderBell("PlatedBellDiamond", null);
+		TileEntitySpecialRenderer PlatedBellEnderRender = new RenderBell("PlatedBellEnder", null);
+		TileEntitySpecialRenderer PlatedBellEmeraldRender = new RenderBell("PlatedBellEmerald", null);
+		TileEntitySpecialRenderer MasterBellSilverRender = new RenderBell("MasterBellSilver", null);
+		TileEntitySpecialRenderer MasterBellQuartzRender = new RenderBell("MasterBellQuartz", null);
+		TileEntitySpecialRenderer MasterBellRedStoneRender = new RenderBell("MasterBellRedStone", null);
+		TileEntitySpecialRenderer MasterBellLazuriteRender = new RenderBell("MasterBellLazurite", null);
+		TileEntitySpecialRenderer MasterBellGoldRender = new RenderBell("MasterBellGold", null);
+		TileEntitySpecialRenderer MasterBellDiamondRender = new RenderBell("MasterBellDiamond", null);
+		TileEntitySpecialRenderer MasterBellEnderRender = new RenderBell("MasterBellEnder", null);
+		TileEntitySpecialRenderer MasterBellEmeraldRender = new RenderBell("MasterBellEmerald", null);
 		
 		ClientRegistry.bindTileEntitySpecialRenderer(TEBellSilver.class, BellSilverRender);
 		ClientRegistry.bindTileEntitySpecialRenderer(TEBellQuartz.class, BellQuartzRender);
@@ -109,7 +118,24 @@ public class ClientProxy extends CommonProxy
 		ClientRegistry.bindTileEntitySpecialRenderer(TEMBellDiamond.class, MasterBellDiamondRender);
 		ClientRegistry.bindTileEntitySpecialRenderer(TEMBellEnder.class, MasterBellEnderRender);
 		ClientRegistry.bindTileEntitySpecialRenderer(TEMBellEmerald.class, MasterBellEmeraldRender);
-		ClientRegistry.bindTileEntitySpecialRenderer(TEBellNetherStar.class, BellNetherStarRender);
+		
+		TileEntitySpecialRenderer BellNetherStarRender0 = new RenderBell("BellNetherStar0", "0");
+		TileEntitySpecialRenderer BellNetherStarRender1 = new RenderBell("BellNetherStar1", "1");
+		TileEntitySpecialRenderer BellNetherStarRender2 = new RenderBell("BellNetherStar2", "2");
+		TileEntitySpecialRenderer BellNetherStarRender3 = new RenderBell("BellNetherStar3", "3");
+		TileEntitySpecialRenderer BellNetherStarRender4 = new RenderBell("BellNetherStar4", "4");
+		TileEntitySpecialRenderer BellNetherStarRender5 = new RenderBell("BellNetherStar5", "5");
+		TileEntitySpecialRenderer BellNetherStarRender6 = new RenderBell("BellNetherStar6", "6");
+		TileEntitySpecialRenderer BellNetherStarRender7 = new RenderBell("BellNetherStar7", "7");
+
+		ClientRegistry.bindTileEntitySpecialRenderer(TEBellNetherStar0.class, BellNetherStarRender0);
+		ClientRegistry.bindTileEntitySpecialRenderer(TEBellNetherStar1.class, BellNetherStarRender1);
+		ClientRegistry.bindTileEntitySpecialRenderer(TEBellNetherStar2.class, BellNetherStarRender2);
+		ClientRegistry.bindTileEntitySpecialRenderer(TEBellNetherStar3.class, BellNetherStarRender3);
+		ClientRegistry.bindTileEntitySpecialRenderer(TEBellNetherStar4.class, BellNetherStarRender4);
+		ClientRegistry.bindTileEntitySpecialRenderer(TEBellNetherStar5.class, BellNetherStarRender5);
+		ClientRegistry.bindTileEntitySpecialRenderer(TEBellNetherStar6.class, BellNetherStarRender6);
+		ClientRegistry.bindTileEntitySpecialRenderer(TEBellNetherStar7.class, BellNetherStarRender7);
 
 	}
 }
