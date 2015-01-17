@@ -29,5 +29,5 @@ resources { srcDirs = ["$projectDir/resources"] }
 }
 
 archivesBaseName = "DaBells"
-version = "v3.5"
+version = "v3.6"
 minecraft.version = "1.7.10-10.13.2.1230"

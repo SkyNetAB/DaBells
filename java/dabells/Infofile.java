@@ -5,7 +5,7 @@ public class Infofile
 {
 	public static final String ID = "dabells";
 	public static final String NAME = "DaBells";
-	public static final String VERS = "3.5";
+	public static final String VERS = "3.6";
 	public static final String VERurl = "https://raw.githubusercontent.com/SkyNetAB/DaBells/master/vers";
 	public static final String CLIENTPROXY = "dabells.client.";
 	public static final String COMMONPROXY = "dabells.";
@@ -21,5 +21,5 @@ public class Infofile
 	public static final String PARENT = "";
 	public static final String REQMODS = "Forge";
 	public static final String DEPEND = "Forge";
-	public static final Boolean DEPENDINFO = true;	
+	public static final Boolean DEPENDINFO = true;
 }

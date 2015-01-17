@@ -32,11 +32,10 @@ import dabells.tileentities.TEBellNetherStar7;
 
 public class BlockBellNetherStar extends BlockContainer
 {
-	
-	@SideOnly(Side.CLIENT)
-	private IIcon[] texture;
-	private int maxMeta = 8;
+	public int maxMeta = 8;
 
+	private IIcon[] texture;
+	
 	public BlockBellNetherStar(String blkname)
 	{
 		super(Material.iron);
@@ -48,7 +47,11 @@ public class BlockBellNetherStar extends BlockContainer
 		setHarvestLevel("pickaxe", 2);
 		setBlockName(blkname);
 		name = blkname;
-		texture = new IIcon[maxMeta];
+		if (CommonProxy.resolution == 0)
+		{
+			texture = new IIcon[maxMeta];
+		}
+		
 	}
 
 	public String name;
@@ -122,25 +125,31 @@ public class BlockBellNetherStar extends BlockContainer
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister icon)
 	{
-		for(int i = 0; i < texture.length ; i++)
+		if (CommonProxy.resolution == 0)
 		{
-			texture[i] = icon.registerIcon(Infofile.NAME + ":" + CommonProxy.resolution + "/" + name + i);
+			for(int i = 0; i < maxMeta ; i++)
+			{
+				texture[i] = icon.registerIcon(Infofile.NAME + ":" + CommonProxy.resolution + "/" + name + i);
+			}	
 		}
+		else
+		{this.blockIcon = icon.registerIcon(Infofile.NAME + ":" + CommonProxy.resolution + "/" + name);}
+		
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item block, List<ItemStack> list)
 	{
 		for(int i = 0; i < maxMeta; i++)
-		{
-			list.add(new ItemStack(block, 1, i));
-		}
+		{list.add(new ItemStack(block, 1, i));}
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta)
 	{
-		return texture[meta];
+		if (CommonProxy.resolution == 0)
+		{return texture[meta];}
+		else {return this.blockIcon;}
 	}
 	
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) 
