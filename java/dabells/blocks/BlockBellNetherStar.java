@@ -32,11 +32,10 @@ import dabells.tileentities.TEBellNetherStar7;
 
 public class BlockBellNetherStar extends BlockContainer
 {
-	
-	@SideOnly(Side.CLIENT)
-	private IIcon[] texture;
-	private int maxMeta = 8;
+	public int maxMeta = 8;
 
+	private IIcon[] texture;
+	
 	public BlockBellNetherStar(String blkname)
 	{
 		super(Material.iron);
@@ -48,7 +47,11 @@ public class BlockBellNetherStar extends BlockContainer
 		setHarvestLevel("pickaxe", 2);
 		setBlockName(blkname);
 		name = blkname;
-		texture = new IIcon[maxMeta];
+		if (CommonProxy.resolution == 0)
+		{
+			texture = new IIcon[maxMeta];
+		}
+		
 	}
 
 	public String name;
@@ -124,7 +127,7 @@ public class BlockBellNetherStar extends BlockContainer
 	{
 		if (CommonProxy.resolution == 0)
 		{
-			for(int i = 0; i < texture.length ; i++)
+			for(int i = 0; i < maxMeta ; i++)
 			{
 				texture[i] = icon.registerIcon(Infofile.NAME + ":" + CommonProxy.resolution + "/" + name + i);
 			}	
